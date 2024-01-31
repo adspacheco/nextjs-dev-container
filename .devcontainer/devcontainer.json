@@ -1,0 +1,29 @@
+{
+  "name": "Node.js",
+
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+
+  "runArgs": ["--add-host=host.docker.internal:host-gateway"],
+
+  "postCreateCommand": "bash -i -c 'nvm install'",
+
+  "postStartCommand": "npm run lint:fix",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {},
+    "ghcr.io/robbert229/devcontainer-features/postgresql-client:1": {},
+  },
+
+  "remoteUser": "node",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dracula-theme.theme-dracula",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode",
+      ],
+    },
+  },
+}
